@@ -22,7 +22,7 @@ def actualizar_item(old_name, new_name):
 
 
 # Página de inicio: muestra los elementos
-@app.route('/index')
+@app.route('/')
 def index():
 
     items_data = obtener_items()
