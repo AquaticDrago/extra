@@ -55,49 +55,6 @@ def update(old_name):
 
 
 
-@app.route('/index')
-def index_html():
-    return '''
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Items</title>
-    </head>
-    <body>
-        <h1>Lista de Items</h1>
-        <ul>
-            {% for item in items %}
-                <li>{{ item }} <a href="{{ url_for('delete', item=item) }}">Eliminar</a></li>
-            {% endfor %}
-        </ul>
-        <form action="{{ url_for('add') }}" method="POST">
-            <input type="text" name="name" placeholder="Nuevo item" required>
-            <button type="submit">Agregar Item</button>
-        </form>
-    </body>
-    </html>
-    '''
-
-
-@app.route('/update')
-def update_html():
-    return '''
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Actualizar Item</title>
-    </head>
-    <body>
-        <h1>Actualizar Item</h1>
-        <form action="{{ url_for('update', old_name=old_name) }}" method="POST">
-            <input type="text" name="name" value="{{ old_name }}" required>
-            <button type="submit">Actualizar</button>
-        </form>
-    </body>
-    </html>
-    '''
 
 
 if __name__ == "__main__":
