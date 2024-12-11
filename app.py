@@ -54,8 +54,7 @@ def update(old_name):
     return render_template('update.html', old_name=old_name)
 
 
-# Vista (View)
-# index.html
+
 @app.route('/index')
 def index_html():
     return '''
@@ -80,7 +79,7 @@ def index_html():
     </html>
     '''
 
-# update.html (plantilla para actualizar un item)
+
 @app.route('/update')
 def update_html():
     return '''
