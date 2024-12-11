@@ -10,7 +10,7 @@ items = []
 def index():
     return render_template('index.html', items=items)
 
-class ControladorItems
+class ControladorItems:
     def agregar():
         if request.method == 'POST':
         item_name = request.form['name']
