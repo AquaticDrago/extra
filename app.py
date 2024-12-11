@@ -11,9 +11,9 @@ def index():
     return render_template('index.html', items=items)
 
 class ControladorItems:
-    def agregar():
+    def agregar(item_name):
         if request.method == 'POST':
-        item_name = request.form['name']
+        
         items.append(item_name)
         return redirect(url_for('index'))
         
@@ -25,7 +25,8 @@ class ControladorItems:
 # Crear un nuevo item
 @app.route('/add', methods=['POST'])
 def add():
-        return controlador.agregar('name')
+        item_name = request.form['name']
+        return controlador.agregar(item_name)
         
 
 # Eliminar un item
