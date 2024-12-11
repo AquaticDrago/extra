@@ -22,9 +22,9 @@ def actualizar_item(old_name, new_name):
 
 
 # Página de inicio: muestra los elementos
-@app.route('/')
+@app.route('/index')
 def index():
-    # Obtener los items desde el "modelo"
+
     items_data = obtener_items()
     return render_template('index.html', items=items_data)
 
@@ -33,14 +33,14 @@ def index():
 @app.route('/add', methods=['POST'])
 def add():
     item_name = request.form['name']
-    agregar_item(item_name)  # Llamar al "modelo" para agregar un nuevo item
+    agregar_item(item_name)  
     return redirect(url_for('index'))
 
 
 # Eliminar un item
 @app.route('/delete/<item>')
 def delete(item):
-    eliminar_item(item)  # Llamar al "modelo" para eliminar el item
+    eliminar_item(item)  
     return redirect(url_for('index'))
 
 
@@ -49,7 +49,7 @@ def delete(item):
 def update(old_name):
     if request.method == 'POST':
         new_name = request.form['name']
-        actualizar_item(old_name, new_name)  # Llamar al "modelo" para actualizar el item
+        actualizar_item(old_name, new_name)  
         return redirect(url_for('index'))
     return render_template('update.html', old_name=old_name)
 
