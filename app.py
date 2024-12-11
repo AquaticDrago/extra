@@ -25,6 +25,7 @@ class ControladorItems:
 @app.route('/add', methods=['POST'])
 def add():
         item_name = request.form['name']
+        controlador = ControladorItems()
         return controlador.agregar(item_name)
         
 
