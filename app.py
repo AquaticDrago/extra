@@ -12,8 +12,7 @@ def index():
 
 class ControladorItems:
     def agregar(item_name):
-        if request.method == 'POST':
-        
+        global items
         items.append(item_name)
         return redirect(url_for('index'))
         
