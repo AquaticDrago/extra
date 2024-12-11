@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for
 
 app = Flask(__name__)
 
-# Modelo (Model)
+
 # Simulamos una base de datos con una lista de items
 items = []
 
@@ -20,7 +20,7 @@ def actualizar_item(old_name, new_name):
     items[index] = new_name
 
 
-# Controlador (Controller)
+
 # Página de inicio: muestra los elementos
 @app.route('/')
 def index():
