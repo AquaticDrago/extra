@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD con Flask</title>
+</head>
+<body>
+    <h1>Lista de Items</h1>
+    
+    <ul>
+        {% for item in items %}
+        <li>{{ item }} <a href="{{ url_for('delete', item=item) }}">Eliminar</a> | <a href="{{ url_for('update', old_name=item) }}">Actualizar</a></li>
+        {% endfor %}
+    </ul>
+
+    <h2>Añadir Nuevo Item</h2>
+    <form action="{{ url_for('add') }}" method="POST">
+        <input type="text" name="name" required>
+        <button type="submit">Agregar</button>
+    </form>
+</body>
+</html>
