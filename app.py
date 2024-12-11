@@ -10,13 +10,23 @@ items = []
 def index():
     return render_template('index.html', items=items)
 
-# Crear un nuevo item
-@app.route('/add', methods=['POST'])
-def add():
-    if request.method == 'POST':
+class ControladorItems
+    def agregar():
+        if request.method == 'POST':
         item_name = request.form['name']
         items.append(item_name)
         return redirect(url_for('index'))
+        
+    def actualizar():
+        print("")
+    def eliminar():
+        print("")
+
+# Crear un nuevo item
+@app.route('/add', methods=['POST'])
+def add():
+        return controlador.agregar('name')
+        
 
 # Eliminar un item
 @app.route('/delete/<item>')
